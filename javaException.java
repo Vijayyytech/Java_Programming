@@ -1,20 +1,25 @@
-class InvalidMarksException extends Exception{
-    public  String getmessage(){
-        System.out.println("This is an invalid marks exception.");
-    }
+import java.util.Scanner;
+class InvalidAgeException extends Exception{
+       InvalidAgeException(String message){
+        super(message);
+       }
 }
 
-public class javaException {
+public class javaException{
     public static void main(String[] args){
-         int marks = 30;
-         if(marks < 30){
-            try{
-                throw new InvalidMarksException();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the age: ");
+        int age = sc.nextInt();
+
+        try{
+            if(age < 18){
+               throw new InvalidAgeException("Age must be 18 or above.");
             }
-            catch(InvalidMarksException e){
-             System.out.println(e.getmessage());
-            }
-         }
-         System.out.println("Finished");
+            System.out.println("Age is: " +age);
+        }
+        catch(InvalidAgeException e){
+            System.out.println("some exception occured!");
+            System.out.println(e.getMessage());
+        }
     }
 }
