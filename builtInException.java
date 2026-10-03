@@ -4,6 +4,7 @@ public class builtInException{
         int b = 0;
         try{
             int c = a/b;
+            System.out.println("Result: "+c);
         }
         catch(ArithmeticException e){
             System.out.println("This is an exception.");
