@@ -10,6 +10,10 @@
    public String getValues(){
     return name;
    }
+
+   public int getvalue(){
+       return salary;
+   }
 }
 
 class child extends base{
@@ -22,6 +26,7 @@ public class inheritance{
         child c = new child();
         c.setValues("baseClass",5000);
         System.out.println(c.getValues());
+        System.out.println(c.getvalue());
         System.out.println(c.username);
     }
 }
