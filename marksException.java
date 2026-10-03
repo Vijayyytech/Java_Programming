@@ -6,10 +6,9 @@ class InvalidMarksException extends Exception{
 }
 public class marksException{
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the marks:");
-        int marks = sc.nextInt();
-        try{
+        try(Scanner sc = new Scanner(System.in);){
+            System.out.println("Enter the marks:");
+            int marks = sc.nextInt();
             if(marks < 30){
                 throw new InvalidMarksException("Invalid marks exception.");
             }
@@ -19,7 +18,5 @@ public class marksException{
             System.out.println(e.getMessage());
             System.out.println(e);
         }
-        sc.close();
-
     }
 }
